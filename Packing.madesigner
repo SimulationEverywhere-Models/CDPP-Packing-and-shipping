@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_1IyEIMAeEee-CJXouYiu8Q" modelName="top" defined="true" sourceFileRelativePath="Packing.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_1IyEIcAeEee-CJXouYiu8Q" portName="out" portType="OUTPUT_PORT" incomingLinks="_1IyELMAeEee-CJXouYiu8Q"/>
+    <ports xmi:type="CoupledPort" xmi:id="_1IyEIsAeEee-CJXouYiu8Q" portName="in" outgoingLinks="_1IyEK8AeEee-CJXouYiu8Q"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_1IyEI8AeEee-CJXouYiu8Q" instanceName="Packing">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_1IyEJMAeEee-CJXouYiu8Q" modelName="Packing" defined="true" sourceFileRelativePath="Packing.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_1IyEJcAeEee-CJXouYiu8Q" portName="in" incomingLinks="_1IyEK8AeEee-CJXouYiu8Q"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_1IyEJsAeEee-CJXouYiu8Q" portName="out" portType="OUTPUT_PORT" outgoingLinks="_1IyELMAeEee-CJXouYiu8Q"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_1IyEJ8AeEee-CJXouYiu8Q" name="distribution"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_1IyEKMAeEee-CJXouYiu8Q" name="distribution" value="Normal"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_1IyEKcAeEee-CJXouYiu8Q" name="mean" value="2"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_1IyEKsAeEee-CJXouYiu8Q" name="deviation" value="1"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_1IyEK8AeEee-CJXouYiu8Q" target="_1IyEJcAeEee-CJXouYiu8Q" source="_1IyEIsAeEee-CJXouYiu8Q"/>
+    <links xmi:type="CoupledLink" xmi:id="_1IyELMAeEee-CJXouYiu8Q" target="_1IyEIcAeEee-CJXouYiu8Q" source="_1IyEJsAeEee-CJXouYiu8Q"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_1IyrMMAeEee-CJXouYiu8Q" type="DEVS" element="_1IyEIMAeEee-CJXouYiu8Q" name="Packing.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1IyrMcAeEee-CJXouYiu8Q"/>
+  </notation:Diagram>
+</xmi:XMI>

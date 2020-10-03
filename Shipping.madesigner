@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_gU4XYMAeEee-CJXouYiu8Q" modelName="top" defined="true" sourceFileRelativePath="Shipping.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_gU4XYcAeEee-CJXouYiu8Q" portName="out" portType="OUTPUT_PORT" incomingLinks="_gU4XbMAeEee-CJXouYiu8Q"/>
+    <ports xmi:type="CoupledPort" xmi:id="_gU4XYsAeEee-CJXouYiu8Q" portName="in" outgoingLinks="_gU4Xa8AeEee-CJXouYiu8Q"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_gU4XY8AeEee-CJXouYiu8Q" instanceName="Shipping">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_gU4XZMAeEee-CJXouYiu8Q" modelName="Shipping" defined="true" sourceFileRelativePath="Shipping.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_gU4XZcAeEee-CJXouYiu8Q" portName="in" incomingLinks="_gU4Xa8AeEee-CJXouYiu8Q"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_gU4XZsAeEee-CJXouYiu8Q" portName="out" portType="OUTPUT_PORT" outgoingLinks="_gU4XbMAeEee-CJXouYiu8Q"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_gU4XZ8AeEee-CJXouYiu8Q" name="distribution"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_gU4XaMAeEee-CJXouYiu8Q" name="distribution" value="Normal"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_gU4XacAeEee-CJXouYiu8Q" name="mean" value="2"/>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_gU4XasAeEee-CJXouYiu8Q" name="deviation" value="1"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_gU4Xa8AeEee-CJXouYiu8Q" target="_gU4XZcAeEee-CJXouYiu8Q" source="_gU4XYsAeEee-CJXouYiu8Q"/>
+    <links xmi:type="CoupledLink" xmi:id="_gU4XbMAeEee-CJXouYiu8Q" target="_gU4XYcAeEee-CJXouYiu8Q" source="_gU4XZsAeEee-CJXouYiu8Q"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_gU4-cMAeEee-CJXouYiu8Q" type="DEVS" element="_gU4XYMAeEee-CJXouYiu8Q" name="Shipping.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_gU4-ccAeEee-CJXouYiu8Q"/>
+  </notation:Diagram>
+</xmi:XMI>

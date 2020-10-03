@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Models>
+	<Model name="packingAndShipping" type="top-level" description="top-level is a model including Order, Vendor and delivery with  totally five atomic models.">
+		<Inputs>
+			<Port name="ReqIn" type="int" description="get the request of a product"/>		
+		</Inputs>
+		<Outputs>
+			<Port name="closeOrder" type="int" description="Close order"/>
+		</Outputs>
+		<Files>	
+			<File name="packingAndShipping.ma" type="MA" location="/"/>
+			<File name="packingAndShipping.ev" type="EV" location="/"/>
+			<File name="packingAndShippingLOG.log" type="LOG" location="/"/>
+			<File name="packingAndShipping.bat" type="BAT" location="/"/>
+			<File name="packingAndShipping1.ma" type="MA" location="/"/>
+			<File name="packingAndShipping1.ev" type="EV" location="/"/>
+			<File name="packingAndShippingLOG1.log" type="LOG" location="/"/>
+			<File name="simulation2.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+	<Model name="RequestHandler" type="atomic" description="Store and send order request.">
+		<Inputs>
+			<Port name="ReqIn" type="int" description="new request for order delivery"/>			
+		</Inputs>
+		<Inputs>
+			<Port name="Done" type="int" description="request for next id"/>			
+		</Inputs>
+
+		<Outputs>
+			<Port name="out" type="int" description="send product no to checkstock"/>
+		</Outputs>
+		<Files>
+			<File name="RequestHandler.h" type="H" location="/"/>
+			<File name="RequestHandler.cpp" type="CPP" location="/"/>
+			<File name="RequestHandler.ma" type="MA" location="/"/>		
+			<File name="RequestHandler.ev" type="EV" location="/"/>			
+			<File name="RequestHandlerLOG.log" type="LOG" location="/"/>
+			<File name="RequestHandler.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+	<Model name="Checkstock" type="atomic" description="find item in stock.">
+		<Inputs>
+			<Port name="in" type="in" description="getting product id for checking its avilability in stock"/>			
+		</Inputs>
+		<Outputs>
+			<Port name="out" type="int" description="start packing order to packing model"/>
+		</Outputs>
+                <Outputs>
+			<Port name="done" type="int" description="send equest for next order"/>
+		</Outputs>
+		<Files>
+			<File name="Checkstock.h" type="H" location="/"/>
+			<File name="Checkstock.cpp" type="CPP" location="/"/>
+			<File name="Checkstock.ma" type="MA" location="/"/>
+			<File name="Checkstock.ev" type="EV" location="/"/>
+			<File name="CheckstockLOG.log" type="LOG" location="/"/>
+			<File name="Checkstock.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+	<Model name="Packing" type="atomic" description="pack the order">
+		<Inputs>
+			<Port name="in" type="double" description="pack the requested order"/>			
+		</Inputs>
+		<Outputs>
+			<Port name="out" type="double" description="start packing order to packing model and for shipping"/>
+		</Outputs>
+		<Files>
+			<File name="Packing.h" type="H" location="/"/>
+			<File name="Packing.cpp" type="CPP" location="/"/>
+			<File name="Packing.ma" type="MA" location="/"/>
+			<File name="Packing.ev" type="EV" location="/"/>
+			<File name="PackingLOG.log" type="LOG" location="/"/>
+			<File name="Packing.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+	<Model name="Shipping" type="atomic" description="ship the order">
+		<Inputs>
+			<Port name="in" type="double" description="get the order for shipping"/>			
+		</Inputs>
+		<Outputs>
+			<Port name="out" type="double" description="send for delivery"/>
+		</Outputs>
+		<Files>
+			<File name="Shipping.h" type="H" location="/"/>
+			<File name="Shipping.cpp" type="CPP" location="/"/>
+			<File name="Shipping.ma" type="MA" location="/"/>
+			<File name="Shipping.ev" type="EV" location="/"/>
+			<File name="ShippingLOG.log" type="LOG" location="/"/>
+			<File name="Shipping.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+	<Model name="Delivery" type="atomic" description="deliver and close the order">
+		<Inputs>
+			<Port name="in" type="in" description="get the order for delivery"/>			
+		</Inputs>
+		<Outputs>
+			<Port name="closeOrder" type="int" description="close the order after delivery"/>
+		</Outputs>
+		<Files>
+			<File name="Delivery.h" type="H" location="/"/>
+			<File name="Delivery.cpp" type="CPP" location="/"/>
+			<File name="Delivery.ma" type="MA" location="/"/>
+			<File name="Delivery.ev" type="EV" location="/"/>
+			<File name="DeliveryLOG.log" type="LOG" location="/"/>
+			<File name="Delivery.bat" type="BAT" location="/"/>
+		</Files>
+	</Model>
+
+</Models>

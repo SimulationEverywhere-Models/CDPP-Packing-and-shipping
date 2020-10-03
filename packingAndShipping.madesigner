@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_wrU-YMA_EeezUfWhCdkYvQ" modelName="top" defined="true" sourceFileRelativePath="packingAndShipping.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_wrU-YcA_EeezUfWhCdkYvQ" portName="closeOrder" portType="OUTPUT_PORT" incomingLinks="_wrVln8A_EeezUfWhCdkYvQ"/>
+    <ports xmi:type="CoupledPort" xmi:id="_wrU-YsA_EeezUfWhCdkYvQ" portName="ReqIn" outgoingLinks="_wrVlnMA_EeezUfWhCdkYvQ"/>
+    <coupledModels xmi:type="CoupledModelInstance" xmi:id="_wrU-Y8A_EeezUfWhCdkYvQ" instanceName="Order">
+      <modelType xmi:type="CoupledModelType" xmi:id="_wrU-ZMA_EeezUfWhCdkYvQ" modelName="Order">
+        <ports xmi:type="CoupledPort" xmi:id="_wrU-ZcA_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" incomingLinks="_wrVlfMA_EeezUfWhCdkYvQ" outgoingLinks="_wrVlncA_EeezUfWhCdkYvQ"/>
+        <ports xmi:type="CoupledPort" xmi:id="_wrU-ZsA_EeezUfWhCdkYvQ" portName="ReqIn" incomingLinks="_wrVlnMA_EeezUfWhCdkYvQ" outgoingLinks="_wrVle8A_EeezUfWhCdkYvQ"/>
+        <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wrU-Z8A_EeezUfWhCdkYvQ" instanceName="RequestHandler">
+          <modelType xmi:type="CPPAtomicModelType" xmi:id="_wrU-aMA_EeezUfWhCdkYvQ" modelName="RequestHandler" defined="true" sourceFileRelativePath="RequestHandler.cpp">
+            <ports xmi:type="InputAtomicPort" xmi:id="_wrU-acA_EeezUfWhCdkYvQ" portName="ReqIn" incomingLinks="_wrVle8A_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="InputAtomicPort" xmi:id="_wrU-asA_EeezUfWhCdkYvQ" portName="done" incomingLinks="_wrVlfsA_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="OutputAtomicPort" xmi:id="_wrU-a8A_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" outgoingLinks="_wrVlfcA_EeezUfWhCdkYvQ"/>
+            <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wrVlcMA_EeezUfWhCdkYvQ" name="preparation"/>
+          </modelType>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlccA_EeezUfWhCdkYvQ" name="preparation" value="00:00:10:000"/>
+        </atomicModels>
+        <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wrVlcsA_EeezUfWhCdkYvQ" instanceName="Checkstock">
+          <modelType xmi:type="CPPAtomicModelType" xmi:id="_wrVlc8A_EeezUfWhCdkYvQ" modelName="Checkstock" defined="true" sourceFileRelativePath="Checkstock.cpp">
+            <ports xmi:type="InputAtomicPort" xmi:id="_wrVldMA_EeezUfWhCdkYvQ" portName="in" incomingLinks="_wrVlfcA_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="OutputAtomicPort" xmi:id="_wrVldcA_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" outgoingLinks="_wrVlfMA_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="OutputAtomicPort" xmi:id="_wrVldsA_EeezUfWhCdkYvQ" portName="done" portType="OUTPUT_PORT" outgoingLinks="_wrVlfsA_EeezUfWhCdkYvQ"/>
+            <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wrVld8A_EeezUfWhCdkYvQ" name="distribution"/>
+          </modelType>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVleMA_EeezUfWhCdkYvQ" name="distribution" value="Normal"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlecA_EeezUfWhCdkYvQ" name="mean" value="4"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlesA_EeezUfWhCdkYvQ" name="deviation" value="3"/>
+        </atomicModels>
+        <links xmi:type="CoupledLink" xmi:id="_wrVle8A_EeezUfWhCdkYvQ" target="_wrU-acA_EeezUfWhCdkYvQ" source="_wrU-ZsA_EeezUfWhCdkYvQ"/>
+        <links xmi:type="CoupledLink" xmi:id="_wrVlfMA_EeezUfWhCdkYvQ" target="_wrU-ZcA_EeezUfWhCdkYvQ" source="_wrVldcA_EeezUfWhCdkYvQ"/>
+        <links xmi:type="CoupledLink" xmi:id="_wrVlfcA_EeezUfWhCdkYvQ" target="_wrVldMA_EeezUfWhCdkYvQ" source="_wrU-a8A_EeezUfWhCdkYvQ"/>
+        <links xmi:type="CoupledLink" xmi:id="_wrVlfsA_EeezUfWhCdkYvQ" target="_wrU-asA_EeezUfWhCdkYvQ" source="_wrVldsA_EeezUfWhCdkYvQ"/>
+      </modelType>
+    </coupledModels>
+    <coupledModels xmi:type="CoupledModelInstance" xmi:id="_wrVlf8A_EeezUfWhCdkYvQ" instanceName="Vendor">
+      <modelType xmi:type="CoupledModelType" xmi:id="_wrVlgMA_EeezUfWhCdkYvQ" modelName="Vendor">
+        <ports xmi:type="CoupledPort" xmi:id="_wrVlgcA_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" incomingLinks="_wrVllMA_EeezUfWhCdkYvQ" outgoingLinks="_wrVlnsA_EeezUfWhCdkYvQ"/>
+        <ports xmi:type="CoupledPort" xmi:id="_wrVlgsA_EeezUfWhCdkYvQ" portName="in" incomingLinks="_wrVlncA_EeezUfWhCdkYvQ" outgoingLinks="_wrVlk8A_EeezUfWhCdkYvQ"/>
+        <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wrVlg8A_EeezUfWhCdkYvQ" instanceName="Packing">
+          <modelType xmi:type="CPPAtomicModelType" xmi:id="_wrVlhMA_EeezUfWhCdkYvQ" modelName="Packing" defined="true" sourceFileRelativePath="Packing.cpp">
+            <ports xmi:type="InputAtomicPort" xmi:id="_wrVlhcA_EeezUfWhCdkYvQ" portName="in" incomingLinks="_wrVlk8A_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="OutputAtomicPort" xmi:id="_wrVlhsA_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" outgoingLinks="_wrVllcA_EeezUfWhCdkYvQ"/>
+            <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wrVlh8A_EeezUfWhCdkYvQ" name="distribution"/>
+          </modelType>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVliMA_EeezUfWhCdkYvQ" name="distribution" value="Normal"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlicA_EeezUfWhCdkYvQ" name="mean" value="2"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlisA_EeezUfWhCdkYvQ" name="deviation" value="1"/>
+        </atomicModels>
+        <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wrVli8A_EeezUfWhCdkYvQ" instanceName="Shipping">
+          <modelType xmi:type="CPPAtomicModelType" xmi:id="_wrVljMA_EeezUfWhCdkYvQ" modelName="Shipping" defined="true" sourceFileRelativePath="Shipping.cpp">
+            <ports xmi:type="InputAtomicPort" xmi:id="_wrVljcA_EeezUfWhCdkYvQ" portName="in" incomingLinks="_wrVllcA_EeezUfWhCdkYvQ"/>
+            <ports xmi:type="OutputAtomicPort" xmi:id="_wrVljsA_EeezUfWhCdkYvQ" portName="out" portType="OUTPUT_PORT" outgoingLinks="_wrVllMA_EeezUfWhCdkYvQ"/>
+            <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wrVlj8A_EeezUfWhCdkYvQ" name="distribution"/>
+          </modelType>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlkMA_EeezUfWhCdkYvQ" name="distribution" value="Normal"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlkcA_EeezUfWhCdkYvQ" name="mean" value="2"/>
+          <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlksA_EeezUfWhCdkYvQ" name="deviation" value="1"/>
+        </atomicModels>
+        <links xmi:type="CoupledLink" xmi:id="_wrVlk8A_EeezUfWhCdkYvQ" target="_wrVlhcA_EeezUfWhCdkYvQ" source="_wrVlgsA_EeezUfWhCdkYvQ"/>
+        <links xmi:type="CoupledLink" xmi:id="_wrVllMA_EeezUfWhCdkYvQ" target="_wrVlgcA_EeezUfWhCdkYvQ" source="_wrVljsA_EeezUfWhCdkYvQ"/>
+        <links xmi:type="CoupledLink" xmi:id="_wrVllcA_EeezUfWhCdkYvQ" target="_wrVljcA_EeezUfWhCdkYvQ" source="_wrVlhsA_EeezUfWhCdkYvQ"/>
+      </modelType>
+    </coupledModels>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_wrVllsA_EeezUfWhCdkYvQ" instanceName="Delivery">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_wrVll8A_EeezUfWhCdkYvQ" modelName="DeliveryType" defined="true" sourceFileRelativePath="DeliveryType.cpp">
+        <ports xmi:type="InputAtomicPort" xmi:id="_wrVlmMA_EeezUfWhCdkYvQ" portName="in" incomingLinks="_wrVlnsA_EeezUfWhCdkYvQ"/>
+        <ports xmi:type="OutputAtomicPort" xmi:id="_wrVlmcA_EeezUfWhCdkYvQ" portName="closeOrder" portType="OUTPUT_PORT" outgoingLinks="_wrVln8A_EeezUfWhCdkYvQ"/>
+        <parameters xmi:type="AtomicModelTypeParameter" xmi:id="_wrVlmsA_EeezUfWhCdkYvQ" name="preparation"/>
+      </modelType>
+      <parameters xmi:type="AtomicModelInstanceParameter" xmi:id="_wrVlm8A_EeezUfWhCdkYvQ" name="preparation" value="00:00:10:000"/>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_wrVlnMA_EeezUfWhCdkYvQ" target="_wrU-ZsA_EeezUfWhCdkYvQ" source="_wrU-YsA_EeezUfWhCdkYvQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_wrVlncA_EeezUfWhCdkYvQ" target="_wrVlgsA_EeezUfWhCdkYvQ" source="_wrU-ZcA_EeezUfWhCdkYvQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_wrVlnsA_EeezUfWhCdkYvQ" target="_wrVlmMA_EeezUfWhCdkYvQ" source="_wrVlgcA_EeezUfWhCdkYvQ"/>
+    <links xmi:type="CoupledLink" xmi:id="_wrVln8A_EeezUfWhCdkYvQ" target="_wrU-YcA_EeezUfWhCdkYvQ" source="_wrVlmcA_EeezUfWhCdkYvQ"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_wrWzkMA_EeezUfWhCdkYvQ" type="DEVS" element="_wrU-YMA_EeezUfWhCdkYvQ" name="packingAndShipping.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_wrWzkcA_EeezUfWhCdkYvQ"/>
+  </notation:Diagram>
+</xmi:XMI>
